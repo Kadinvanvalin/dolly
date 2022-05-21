@@ -3,7 +3,7 @@
 extern crate git2;
 extern crate regex;
 
-use clap::Parser;
+// use clap::Parser;
 use git2::Repository;
 use git2::{Cred, Error, RemoteCallbacks};
 use regex::Regex;
@@ -34,7 +34,7 @@ pub fn ssh_clone(host: &str, into: &Path) {
     // // Prepare callbacks.
     let mut callbacks = RemoteCallbacks::new();
     callbacks.credentials(|_url, username_from_url, _allowed_types| {
-        println!("UserName: {}", username_from_url.unwrap());
+        // println!("UserName: {}", username_from_url.unwrap());
         Cred::ssh_key(
             username_from_url.unwrap(),
             None,
@@ -56,7 +56,7 @@ pub fn ssh_clone(host: &str, into: &Path) {
     //
     match result {
         Ok(content) => {
-            println!("Repo cloned to {:?}", into);
+            // println!("Repo cloned to {:?}", into);
         }
         Err(error) => {
             println!("Oh noes: {}", error);
