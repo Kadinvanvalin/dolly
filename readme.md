@@ -5,12 +5,15 @@ Inspired by [gitclone](https://github.com/khoberg/gitclone).
 I didn't like the dependence on npm so this is a re-write in rust. 
 
 # Installation
-Hopefully I can get the binaries published for download to github at some point. Until then - you will have to compile dolly yourself
-
 #### dependencies
 - ecdsa ssh key located at "$HOME/.ssh/id_ecdsa"
-- rust (just to compile)
+- rust (if you want to compile)
 
+
+## download 
+https://github.com/Kadinvanvalin/dolly/releases/tag/v0.1.0-alpha
+
+## build it yourself
 ```bash
 git clone git@github.com:Kadinvanvalin/dolly.git && cd dolly
 ```
