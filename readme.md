@@ -6,6 +6,9 @@ I didn't like the dependence on npm so this is a re-write in rust.
 
 # Installation
 #### dependencies
+```bash 
+ssh-keygen -t ecdsa -b 521
+```
 - ecdsa ssh key located at "$HOME/.ssh/id_ecdsa"
 - rust (if you want to compile)
 
@@ -30,7 +33,7 @@ move optional scripts to your bin
 cp  ./open_remote.sh /usr/local/bin/remote
 ```
 ```bash 
-cp  ./clone_and_cd.sh /usr/local/bin/clone_and_cd
+cp  ./clone_and_cd.sh /usr/local/bin/dolly_INNER_clone_and_go.sh
 ```
 ## Behavior
 
