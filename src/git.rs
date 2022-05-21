@@ -20,6 +20,15 @@ pub fn valid_ssh_url(url: &str) -> bool {
 pub fn write_location(url: &str) -> PathBuf {
     return parse_write_location(parse_url(url));
 }
+pub fn make_url(url: &str) -> String {
+    return make_url_private(parse_url(url));
+}
+fn make_url_private(git_repo: GitRepo) -> String {
+    String::from(&format!(
+        "https://{}/{}/{}",
+        git_repo.host, git_repo.slug, git_repo.repo_name
+    ))
+}
 fn parse_url(url: &str) -> GitRepo {
     let re = Regex::new(r"(git)@([^/:]+):([^/:]+)/(.+)(.git)").expect("failed to parse regex");
 
