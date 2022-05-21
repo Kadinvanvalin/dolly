@@ -52,6 +52,7 @@ fn parse_write_location(git_repo: GitRepo) -> PathBuf {
     ));
 }
 
+
 #[test]
 fn check_valid_ssh_url() {
     let url = "git@github.com:Kadinvanvalin/dolly.git";

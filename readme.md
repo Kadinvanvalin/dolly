@@ -6,10 +6,8 @@ I didn't like the dependence on npm so this is a re-write in rust.
 
 # Installation
 #### dependencies
-```bash 
-ssh-keygen -t ecdsa -b 521
-```
-- ecdsa ssh key located at "$HOME/.ssh/id_ecdsa"
+- tested on macos
+- git
 - rust (if you want to compile)
 
 
@@ -37,15 +35,8 @@ cp  ./clone_and_cd.sh /usr/local/bin/dolly_INNER_clone_and_go.sh
 ```
 ## Behavior
 
-Dolly will try to clone your repo to your home directory with directories for the domain and slug of the project
-```bash
-dolly git@github.com:Kadinvanvalin/dolly.git
-```
-will clone dolly into 
+dolly is just a tiny string parser - you will need the helper scripts to actually do the cloning
 
-```bash
-$HOME/github.com/kadinvanvalin/dolly
-```
 
 ### helper scripts
 
@@ -55,4 +46,11 @@ remote will try to open the remote of your repo (macos only) - it will throw an 
 remote
 ```
 
-you can add an alias for clone_and_cd.sh in your bash to open the repo after you clone it
+
+
+```bash
+alias clone_and_go=". dolly_INNER_clone_and_go.sh"
+```
+```bash
+clone_and_go git@github.com:Kadinvanvalin/dolly.git
+```
