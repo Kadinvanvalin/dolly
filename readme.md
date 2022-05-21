@@ -29,7 +29,9 @@ move optional scripts to your bin
 ```bash 
 cp  ./open_remote.sh /usr/local/bin/remote
 ```
-
+```bash 
+cp  ./clone_and_cd.sh /usr/local/bin/clone_and_cd
+```
 ## Behavior
 
 Dolly will try to clone your repo to your home directory with directories for the domain and slug of the project

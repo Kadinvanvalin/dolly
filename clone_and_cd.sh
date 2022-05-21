@@ -1,4 +1,4 @@
 test=$(dolly $1)
 cd $test
 
-# alias jump=". ./clone_and_cd.sh"
+# alias clone_and_go=". clone_and_cd"
