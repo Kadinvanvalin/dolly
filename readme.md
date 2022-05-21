@@ -23,9 +23,12 @@ cargo b -r
 ```
 move dolly to your bin
 ```bash 
-mv target/release/dolly /usr/local/bin
+cp target/release/dolly /usr/local/bin/dolly
 ```
-
+move optional scripts to your bin
+```bash 
+cp  ./open_remote.sh /usr/local/bin/remote
+```
 
 ## Behavior
 
@@ -38,3 +41,13 @@ will clone dolly into
 ```bash
 $HOME/github.com/kadinvanvalin/dolly
 ```
+
+### helper scripts
+
+remote will try to open the remote of your repo (macos only) - it will throw an error if you are not in a repo
+
+```bash
+remote
+```
+
+you can add an alias for clone_and_cd.sh in your bash to open the repo after you clone it

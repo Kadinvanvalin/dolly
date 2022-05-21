@@ -26,6 +26,8 @@ fn main() {
                 println!("{}", output)
             }
         }
+    } else {
+        println!("{}", &*url)
     }
 }
 

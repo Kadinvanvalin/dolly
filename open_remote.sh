@@ -1,3 +1,4 @@
 git_remote=$(git remote get-url origin)
-url=$(cargo run -- $git_remote o)
+url=$(dolly $git_remote o) || $git_remote
+
 open $url
