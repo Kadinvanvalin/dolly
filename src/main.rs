@@ -4,6 +4,7 @@ extern crate regex;
 use git::make_url;
 use git::valid_ssh_url;
 use git::write_location;
+use git::parse_url;
 
 fn main() {
     let url = std::env::args().nth(1).expect("no url given");
@@ -13,6 +14,9 @@ fn main() {
             Some(value) => {
                 if value.eq("o") {
                     try_open(url)
+                } else if value.eq("s") {
+                    let repo = parse_url(&*url);
+                    println!("{}/{}", repo.slug,  repo.repo_name)
                 }
             }
             _ => {

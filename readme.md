@@ -3,8 +3,21 @@
 Inspired by [gitclone](https://github.com/khoberg/gitclone).
 
 I didn't like the dependence on npm so this is a re-write in rust. 
-## TODO
-[] rewrite to only return slug "projectOwner/repoName"
+## options
+```bash
+dolly $(git remote get-url origin)
+```
+returns a path /Users/kadvanv/github.com/Kadinvanvalin/dolly
+
+```bash
+dolly $(git remote get-url origin) o
+```
+returns a url https://github.com/Kadinvanvalin/dolly
+
+```bash
+dolly $(git remote get-url origin) s
+```
+returns a slug Kadinvanvalin/dolly
 # Installation
 #### dependencies
 - tested on macos

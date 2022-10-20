@@ -3,10 +3,10 @@ use std::env;
 use std::path::PathBuf;
 
 #[derive(PartialEq, Debug)]
-struct GitRepo {
-    host: String,
-    slug: String,
-    repo_name: String,
+pub struct GitRepo {
+    pub host: String,
+    pub slug: String,
+    pub repo_name: String,
 }
 pub fn valid_ssh_url(url: &str) -> bool {
     let matches = Regex::new(r"(git)@([^/:]+):([^/:]+)/(.+)(.git)");
@@ -23,13 +23,8 @@ pub fn write_location(url: &str) -> PathBuf {
 pub fn make_url(url: &str) -> String {
     return make_url_private(parse_url(url));
 }
-fn make_url_private(git_repo: GitRepo) -> String {
-    String::from(&format!(
-        "https://{}/{}/{}",
-        git_repo.host, git_repo.slug, git_repo.repo_name
-    ))
-}
-fn parse_url(url: &str) -> GitRepo {
+
+pub fn parse_url(url: &str) -> GitRepo {
     let re = Regex::new(r"(git)@([^/:]+):([^/:]+)/(.+)(.git)").expect("failed to parse regex");
 
     let caps = re.captures(&url).unwrap();
@@ -42,6 +37,14 @@ fn parse_url(url: &str) -> GitRepo {
         repo_name: repo_name.parse().unwrap(),
     };
 }
+
+fn make_url_private(git_repo: GitRepo) -> String {
+    String::from(&format!(
+        "https://{}/{}/{}",
+        git_repo.host, git_repo.slug, git_repo.repo_name
+    ))
+}
+
 fn parse_write_location(git_repo: GitRepo) -> PathBuf {
     return PathBuf::from(&format!(
         "{}/{}/{}/{}",
