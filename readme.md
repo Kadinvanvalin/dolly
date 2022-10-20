@@ -3,7 +3,8 @@
 Inspired by [gitclone](https://github.com/khoberg/gitclone).
 
 I didn't like the dependence on npm so this is a re-write in rust. 
-
+## TODO
+[] rewrite to only return slug "projectOwner/repoName"
 # Installation
 #### dependencies
 - tested on macos
